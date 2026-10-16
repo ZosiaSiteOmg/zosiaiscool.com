@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zosia is cool">
-  <title>Zosia is cool</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Zosia is cool — a tiny tribute page.">
+  <title>Zosia Website</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -17,153 +12,117 @@
       padding: 0;
     }
 
-    :root {
-      --bg-color: #0a0a0c;
-      --card-bg: #121216;
-      --text-main: #f3f3f5;
-      --text-muted: #8e8e96;
-      --accent-warm: #ffb800;
-      --border-color: #272730;
-      --font-display: 'Syne', sans-serif;
-      --font-mono: 'Space Mono', monospace;
-    }
-
     body {
       min-height: 100vh;
-      min-height: 100svh;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--font-mono);
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #f3f3f5;
+      background-color: #050505;
+    }
+
+    main {
+      width: 100%;
+      max-width: 540px;
+      padding: 32px 24px;
+      background-color: #0f0f12;
+      border: 1px solid #272730;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .zine-wrapper {
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
     }
 
     header {
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 16px 0;
-      margin-bottom: 24px;
       width: 100%;
-      overflow: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1rem, 7.2vw, 3rem);
-      font-weight: 800;
-      line-height: 1.1;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
+      font-size: clamp(1.2rem, 6.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: 0;
+      color: #ffffff;
       white-space: nowrap;
       text-align: center;
-      width: 100%;
-      display: block;
-    }
-
-    .portrait-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 16px;
-      border-radius: 4px;
-      transition: border-color 0.25s ease;
-    }
-
-    .portrait-card:hover {
-      border-color: #3f3f4e;
+      margin: 0;
+      padding: 0;
     }
 
     figure {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      align-items: center;
     }
 
     .image-link {
       display: block;
       width: 100%;
-      text-decoration: none;
-      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #272730;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
-    .image-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background-color: #1a1a20;
-      border: 1px solid var(--border-color);
-      border-radius: 2px;
+    .image-link:hover {
+      opacity: 0.92;
+      transform: scale(1.005);
     }
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       display: block;
-      filter: contrast(1.05) brightness(0.95);
-      transition: filter 0.3s ease, transform 0.4s ease;
-    }
-
-    .image-link:hover img {
-      filter: contrast(1.1) brightness(1);
-      transform: scale(1.015);
+      width: 100%;
+      height: auto;
     }
 
     figcaption {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4px 2px 0 2px;
-    }
-
-    .quote-box {
-      font-family: var(--font-mono);
+      margin-top: 16px;
       font-size: 0.95rem;
-      color: var(--text-main);
+      font-style: italic;
+      color: #a1a1aa;
+      text-align: center;
     }
 
-    .quote-mark {
-      color: var(--accent-warm);
-    }
-
-    .attribution {
+    footer {
+      margin-top: 24px;
+      text-align: center;
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: #71717a;
+    }
+
+    footer p {
+      margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
 
-  <div class="zine-wrapper">
+  <main>
     <header>
-      <h1>Zosia is cool</h1>
+      <h1>Zosia Website</h1>
     </header>
 
-    <main class="portrait-card">
-      <figure>
-        <a href="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" download="zosia.jpeg" class="image-link">
-          <div class="image-frame">
-            <img src="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" alt="Portrait of Zosia" onerror="this.src='https://placehold.co/800x1000/1a1a20/f3f3f5?text=Zosia'">
-          </div>
-        </a>
-        <figcaption>
-          <span class="quote-box"><span class="quote-mark">“</span>yo<span class="quote-mark">”</span></span>
-          <span class="attribution">— Zosia</span>
-        </figcaption>
-      </figure>
-    </main>
-  </div>
+    <figure>
+      <a href="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" download="zosia.jpeg" class="image-link" title="Click to download image">
+        <img src="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" alt="Portrait of Zosia">
+      </a>
+      <figcaption>"yo" — Zosia</figcaption>
+    </figure>
+
+    <footer>
+      <p>Not created by Zosia nor affiliated</p>
+      <p>&copy; 2026 All rights reserved.</p>
+    </footer>
+  </main>
 
 </body>
 </html>

@@ -5,50 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Zosia is cool — a tiny tribute page.">
   <title>Zosia is cool</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color: #0a0a0c;
+      --card-bg: #121216;
+      --text-main: #f3f3f5;
+      --text-muted: #8e8e96;
+      --accent-warm: #ffb800;
+      --border-color: #272730;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
     body {
-      max-width: 600px;
+      min-height: 100vh;
+      min-height: 100svh;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .zine-wrapper {
+      width: 100%;
+      max-width: 520px;
       margin: 0 auto;
-      padding: 60px 20px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background-color: #fdfdfd;
+    }
+
+    header {
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 0;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 800;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+    }
+
+    .portrait-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      border-radius: 2px;
+      transition: border-color 0.25s ease;
+    }
+
+    .portrait-card:hover {
+      border-color: #3f3f4e;
     }
 
     figure {
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .image-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background-color: #1a1a20;
+      border: 1px solid var(--border-color);
     }
 
     img {
-      display: block;
       width: 100%;
-      height: auto;
-      border-radius: 4px;
-      margin-bottom: 16px;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05) brightness(0.95);
+      transition: filter 0.3s ease, transform 0.4s ease;
+    }
+
+    .portrait-card:hover img {
+      filter: contrast(1.1) brightness(1);
+      transform: scale(1.015);
     }
 
     figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px 0 2px;
+    }
+
+    .quote-box {
+      font-family: var(--font-mono);
       font-size: 0.95rem;
-      color: #666;
+      color: var(--text-main);
+    }
+
+    .quote-mark {
+      color: var(--accent-warm);
+    }
+
+    .attribution {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (hover: hover) {
+      .portrait-card {
+        cursor: pointer;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Zosia is cool</h1>
 
-    <figure>
-      <img src="zosia.jpeg" alt="Portrait of Zosia">
-      <figcaption>"yo" — Zosia</figcaption>
-    </figure>
-  </main>
+  <div class="zine-wrapper">
+    <header>
+      <h1>Zosia is cool</h1>
+    </header>
+
+    <main class="portrait-card">
+      <figure>
+        <div class="image-frame">
+          <img src="zosia.jpeg" alt="Portrait of Zosia" onerror="this.src='https://placehold.co/800x1000/1a1a20/f3f3f5?text=Zosia'">
+        </div>
+        <figcaption>
+          <span class="quote-box"><span class="quote-mark">“</span>yo<span class="quote-mark">”</span></span>
+          <span class="attribution">— Zosia</span>
+        </figcaption>
+      </figure>
+    </main>
+  </div>
+
 </body>
 </html>

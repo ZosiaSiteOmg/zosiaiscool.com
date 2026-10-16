@@ -42,7 +42,6 @@
             font-weight: bold;
             margin-bottom: 30px;
             line-height: 1.2;
-            width: 100%;
             text-align: center;
         }
 
@@ -50,9 +49,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            /* Offset the shadow space so it aligns perfectly with the text center */
-            margin-left: 0; 
+            justify-content: center;
         }
 
         .image-link {
@@ -66,7 +63,7 @@
         }
 
         img {
-            max-width: 90%;
+            max-width: 90vw;
             width: clamp(200px, 60vw, 500px);
             height: auto;
             border-radius: 20px;
@@ -79,6 +76,7 @@
             font-size: 0.95rem;
             font-style: italic;
             color: #a1a1aa;
+            text-align: center;
         }
 
         footer {
@@ -86,6 +84,7 @@
             font-size: 0.8rem;
             color: #71717a;
             width: 100%;
+            text-align: center;
         }
     </style>
 </head>

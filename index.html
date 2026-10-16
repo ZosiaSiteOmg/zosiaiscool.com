@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             background-color: #000000;
             color: #ffffff;
@@ -19,10 +23,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             min-height: 100vh;
             padding: 20px;
             text-align: center;
+        }
+
+        /* Empty wrapper to keep the main content centered vertically */
+        .spacer {
+            flex-grow: 1;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         h1 {
@@ -56,7 +72,8 @@
             width: clamp(200px, 60vw, 500px);
             height: auto;
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            /* Changed shadow from 0 0 to centered 0 0 so it glows evenly all around */
+            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.25);
             display: block;
         }
 
@@ -68,22 +85,29 @@
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: 20px;
             font-size: 0.8rem;
             color: #71717a;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <h1>Zosia is cool</h1>
-    
-    <figure>
-        <a href="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" download="zosia.jpeg" class="image-link" title="Click to download image">
-            <img src="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" alt="Portrait of Zosia">
-        </a>
-        <figcaption>"yo" — Zosia</figcaption>
-    </figure>
+    <div class="spacer"></div>
+
+    <div class="content-wrapper">
+        <h1>Zosia is cool</h1>
+        
+        <figure>
+            <a href="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" download="zosia.jpeg" class="image-link" title="Click to download image">
+                <img src="https://raw.githubusercontent.com/ZosiaSiteOmg/zosiaiscool.com/main/zosia.jpeg" alt="Portrait of Zosia">
+            </a>
+            <figcaption>"yo" — Zosia</figcaption>
+        </figure>
+    </div>
+
+    <div class="spacer"></div>
 
     <footer>
         <p>&copy; 2026 All rights reserved.</p>
